@@ -1,0 +1,187 @@
+/* Reset básico para limpiar márgenes del navegador */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{ 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Estilos del Header/Navbar*/
+.header{
+    background-color: #2c3e50;
+    color: white;
+    padding: 0 1.5rem;
+}
+
+.navbar{ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color:#fff;
+    text-decoration: none;
+}
+
+.nav-menu{
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link{
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-link:hover{
+    color: #3498db;
+}
+
+/* Estilos del meú hamburguesa (oculto por defecto)*/
+.hamburguer{
+    display: none;
+    cursor: pointer;
+}
+
+.bar{
+    display:block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: white;
+    transition: 0.3s;
+}
+
+/* Responsividad: pantallas móviles */
+@media (max-width: 768px) {
+    .hamburguer{
+        display: block;
+    }
+
+
+/* Transformamos el menú en una columna lateral o desplegable */
+
+.nav-menu{
+    position:fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background-color: #2c3e50;
+    width: 100%;
+    text-align: center;
+    transition:0.3s;
+    box-shadow:0 10px 27px rgba(0,0,0,0.05);
+}
+
+.nav-menu.active{
+    left:0;
+}
+
+.nav-item{
+    margin:2.5rem 0;
+}
+}
+
+/* Nuevo: Estilos completos del footer*/
+
+.footer{
+    background-color: rgb(55, 58, 121); /* cambiamos el tono mas oscuro*/
+    color:white; /* gris claro para el texto*/ 
+    margin-top:auto ; /* CLAVE: empuja el footer al fondo cuando hay poco contenido*/
+}
+
+/* Contenedor principal del footer con layout de 3 columnas*/
+
+.footer-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    flex-wrap:wrap; /* se adaptara a pantallas pequeñas*/
+    gap:2rem;
+    max-width:1100px;
+    margin:0 auto;
+    padding: 2.5rem 1.5rem;
+}
+
+/* columna de la marca */
+
+.footer-logo{
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.footer-desc{
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    max-width: 220px;
+}
+
+/*columna de enlaces y de contacto*/
+.footer-title{
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.footer-links ul{ 
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-links a{
+    color: #bdc3c7;
+    text-decoration:none;
+    font-size:0.9rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover{
+    color:#3498db; /* el mismo azul de hove rque el navbar*/
+}
+
+.footer-contact p{
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+}
+
+/* Barra inferior con copyright */
+.footer-bottom{
+    border-top: 1px solid #2c3e50; /* separador sutil*/
+    text-align: center;
+    padding: 1rem 1.5rem;
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    width: 100%;
+}
+
+
+/* Neuvo resposividad del footer en el menu */
+@media (max-width: 768px){
+    .footer-container{
+        flex-direction: column; /* apilas las columnas verticalmente*/
+        align-items: center;
+        text-align: center;
+    }
+    .footer-desc{
+        max-width: 100%;
+    }
+}
+
