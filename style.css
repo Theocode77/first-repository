@@ -1,62 +1,82 @@
 /* Reset básico para limpiar márgenes del navegador */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{ 
+/* html y body al 100% de altura para que el footer pueda pegarse al fondo */
+html,
+body {
+    height: 100%;
+}
+
+/* Convertimos body en un contenedor flex en columna
+   Esto empuja el footer hacia abajo aunque haya poco contenido */
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100vh; /* Ocupa al menos toda la pantalla */
 }
 
-/* Estilos del Header/Navbar*/
-.header{
+/* ========================== */
+/* NUEVO: main-content crece para ocupar el espacio disponible
+   entre el header y el footer (necesario para el layout sticky-footer) */
+/* ========================== */
+.main-content {
+    flex: 1; /* Empuja el footer al fondo siempre */
+}
+
+
+/* ================================================ */
+/* Estilos del Header / Navbar                      */
+/* ================================================ */
+
+.header {
     background-color: #2c3e50;
     color: white;
     padding: 0 1.5rem;
 }
 
-.navbar{ 
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 70px;
 }
 
-.logo{
+.logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color:#fff;
+    color: #fff;
     text-decoration: none;
 }
 
-.nav-menu{
+.nav-menu {
     display: flex;
     list-style: none;
     gap: 2rem;
 }
 
-.nav-link{
+.nav-link {
     color: #fff;
     text-decoration: none;
     transition: 0.3s;
 }
 
-.nav-link:hover{
+.nav-link:hover {
     color: #3498db;
 }
 
-/* Estilos del meú hamburguesa (oculto por defecto)*/
-.hamburguer{
+/* Menú Hamburguesa (oculto por defecto en escritorio) */
+.hamburger {
     display: none;
     cursor: pointer;
 }
 
-.bar{
-    display:block;
+.bar {
+    display: block;
     width: 25px;
     height: 3px;
     margin: 5px auto;
@@ -64,74 +84,69 @@ body{
     transition: 0.3s;
 }
 
-/* Responsividad: pantallas móviles */
+/* Responsividad: Pantallas móviles */
 @media (max-width: 768px) {
-    .hamburguer{
+    .hamburger {
         display: block;
     }
 
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: #2c3e50;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
 
-/* Transformamos el menú en una columna lateral o desplegable */
+    .nav-menu.active {
+        left: 0;
+    }
 
-.nav-menu{
-    position:fixed;
-    left: -100%;
-    top: 70px;
-    flex-direction: column;
-    background-color: #2c3e50;
-    width: 100%;
-    text-align: center;
-    transition:0.3s;
-    box-shadow:0 10px 27px rgba(0,0,0,0.05);
+    .nav-item {
+        margin: 2.5rem 0;
+    }
 }
 
-.nav-menu.active{
-    left:0;
+
+/* ================================================ */
+/* Estilos del Footer                               */
+/* ================================================ */
+
+.footer {
+    background-color: #1a252f;
+    color: #bdc3c7;
+    margin-top: auto; /* Empuja el footer al fondo cuando hay poco contenido */
 }
 
-.nav-item{
-    margin:2.5rem 0;
-}
-}
-
-/* Nuevo: Estilos completos del footer*/
-
-.footer{
-    background-color: rgb(55, 58, 121); /* cambiamos el tono mas oscuro*/
-    color:white; /* gris claro para el texto*/ 
-    margin-top:auto ; /* CLAVE: empuja el footer al fondo cuando hay poco contenido*/
-}
-
-/* Contenedor principal del footer con layout de 3 columnas*/
-
-.footer-container{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    flex-wrap:wrap; /* se adaptara a pantallas pequeñas*/
-    gap:2rem;
-    max-width:1100px;
-    margin:0 auto;
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
     padding: 2.5rem 1.5rem;
 }
 
-/* columna de la marca */
-
-.footer-logo{
+.footer-logo {
     font-size: 1.4rem;
     font-weight: bold;
     color: #fff;
 }
 
-.footer-desc{
+.footer-desc {
     margin-top: 0.5rem;
     font-size: 0.9rem;
     line-height: 1.6;
     max-width: 220px;
 }
 
-/*columna de enlaces y de contacto*/
-.footer-title{
+.footer-title {
     color: #fff;
     font-size: 1rem;
     margin-bottom: 1rem;
@@ -139,49 +154,457 @@ body{
     letter-spacing: 0.05em;
 }
 
-.footer-links ul{ 
+.footer-links ul {
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
-.footer-links a{
+.footer-links a {
     color: #bdc3c7;
-    text-decoration:none;
-    font-size:0.9rem;
+    text-decoration: none;
+    font-size: 0.9rem;
     transition: color 0.3s;
 }
 
-.footer-links a:hover{
-    color:#3498db; /* el mismo azul de hove rque el navbar*/
+.footer-links a:hover {
+    color: #3498db;
 }
 
-.footer-contact p{
+.footer-contact p {
     font-size: 0.9rem;
     margin-bottom: 0.4rem;
 }
 
-/* Barra inferior con copyright */
-.footer-bottom{
-    border-top: 1px solid #2c3e50; /* separador sutil*/
+.footer-bottom {
+    border-top: 1px solid #2c3e50;
     text-align: center;
     padding: 1rem 1.5rem;
     font-size: 0.8rem;
     color: #7f8c8d;
-    width: 100%;
 }
 
-
-/* Neuvo resposividad del footer en el menu */
-@media (max-width: 768px){
-    .footer-container{
-        flex-direction: column; /* apilas las columnas verticalmente*/
+/* Responsividad del footer en móvil */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
         align-items: center;
         text-align: center;
     }
-    .footer-desc{
+
+    .footer-desc {
         max-width: 100%;
     }
 }
 
+
+/* ================================================ */
+/* NUEVO: Estilos compartidos de secciones          */
+/* Usados en Servicios, Portafolio, etc.            */
+/* ================================================ */
+
+/* Títulos de sección reutilizables */
+.section-title {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+/* Subtítulo debajo del título de sección */
+.section-subtitle {
+    font-size: 1rem;
+    color: #7f8c8d;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+
+/* ================================================ */
+/* NUEVO: Estilos del Hero con Video (index.html)   */
+/* ================================================ */
+
+/* Sección hero que ocupa toda la pantalla */
+.hero-video {
+    position: relative;       /* Necesario para posicionar el overlay y el contenido encima del video */
+    width: 100%;
+    height: calc(100vh - 70px); /* Resta la altura del navbar para que no se solape */
+    overflow: hidden;           /* Recorta el video si sobresale del contenedor */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Video de fondo: cubre todo el contenedor */
+.hero-video__bg {
+    position: absolute;   /* Se posiciona respecto al .hero-video */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    /* Cubre el área sin deformar el video */
+    z-index: 0;           /* Queda detrás del overlay y del contenido */
+}
+
+/* Capa semi-transparente sobre el video para oscurecerlo
+   y mejorar la legibilidad del texto blanco */
+.hero-video__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 50% de opacidad negra */
+    z-index: 1;                            /* Encima del video, debajo del contenido */
+}
+
+/* Contenido de texto centrado sobre el video */
+.hero-video__content {
+    position: relative;
+    z-index: 2;           /* Encima del overlay y del video */
+    text-align: center;
+    color: #fff;
+    padding: 0 1.5rem;
+}
+
+/* Título principal del hero */
+.hero-video__title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); /* Sombra para mayor legibilidad */
+}
+
+/* Subtítulo del hero */
+.hero-video__subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* Botón de llamada a la acción (CTA) del hero */
+.hero-video__btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: #3498db;     /* Azul de marca, igual que el hover del navbar */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Efecto hover del botón CTA */
+.hero-video__btn:hover {
+    background-color: #2980b9;   /* Azul más oscuro al pasar el cursor */
+    transform: translateY(-2px); /* Sube ligeramente el botón */
+}
+
+/* Responsividad del hero en móvil */
+@media (max-width: 768px) {
+    .hero-video__title {
+        font-size: 2rem;
+    }
+    .hero-video__subtitle {
+        font-size: 1rem;
+    }
+}
+
+
+/* ================================================ */
+/* NUEVO: Estilos de las Cards (servicios.html)     */
+/* ================================================ */
+
+/* Sección contenedora de las cards */
+.servicios-section {
+    padding: 4rem 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Contenedor flex de las cards: las pone en fila con espacio entre ellas */
+.cards-container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;         /* Se adapta a pantallas pequeñas apilando las cards */
+    justify-content: center;
+}
+
+/* Estilos base de cada card */
+.card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 320px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* Sombra suave para profundidad */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animación al hacer hover */
+}
+
+/* Efecto hover de la card: sube y aumenta la sombra */
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Ícono grande dentro de la card */
+.card__icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Título de la card */
+.card__title {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 0.75rem;
+}
+
+/* Descripción de la card */
+.card__desc {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Botón "Saber más" de la card */
+.card__btn {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+/* Hover del botón de la card */
+.card__btn:hover {
+    background-color: #2980b9;
+}
+
+/* Responsividad de las cards en móvil: se apilan verticalmente */
+@media (max-width: 768px) {
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+/* ================================================ */
+/* NUEVO: Estilos del Portafolio (portafolio.html)  */
+/* ================================================ */
+
+/* Sección contenedora del portafolio */
+.portafolio-section {
+    padding: 4rem 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Grid del portafolio: muestra los items en columnas */
+.portafolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsivo automático */
+    gap: 1.5rem;
+    justify-items: center;
+}
+
+/* Cada item del portafolio: usa position relative para el overlay de hover */
+.portafolio-item {
+    position: relative;
+    overflow: hidden;           /* Recorta la imagen y el overlay al borde redondeado */
+    border-radius: 8px;
+    width: 100%;
+    max-width: 700px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+/* Imagen del proyecto: cubre el contenedor y tiene transición al hacer hover */
+.portafolio-item__img {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;          /* Recorta la imagen para que llene el espacio */
+    transition: transform 0.4s; /* Efecto zoom suave */
+}
+
+/* Zoom de la imagen al hacer hover sobre el item */
+.portafolio-item:hover .portafolio-item__img {
+    transform: scale(1.06);
+}
+
+/* Overlay oscuro que aparece encima de la imagen al hacer hover */
+.portafolio-item__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.2rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75)); /* Degradado de abajo a arriba */
+    color: #fff;
+    opacity: 0;                 /* Oculto por defecto */
+    transition: opacity 0.4s;  /* Aparece suavemente */
+}
+
+/* Muestra el overlay al hacer hover */
+.portafolio-item:hover .portafolio-item__overlay {
+    opacity: 1;
+}
+
+/* Título del proyecto dentro del overlay */
+.portafolio-item__title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+}
+
+/* Etiqueta de categoría y año */
+.portafolio-item__tag {
+    font-size: 0.85rem;
+    opacity: 0.85;
+}
+
+
+/* ================================================ */
+/* NUEVO: Estilos del formulario de Auth (contacto.html) */
+/* Login + Registro con pestañas                    */
+/* ================================================ */
+
+/* Sección que centra el formulario en la página */
+.auth-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 1.5rem;
+    min-height: 100%;
+    background-color: #f4f6f8; /* Fondo gris claro para diferenciar */
+}
+
+/* Caja blanca que contiene las pestañas y los formularios */
+.auth-box {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem 2rem;
+    width: 100%;
+    max-width: 420px; /* Ancho máximo razonable para un formulario */
+}
+
+/* Título interior del auth-box */
+.auth-box__title {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* ---- Pestañas ---- */
+
+/* Contenedor de los dos botones de pestaña */
+.auth-tabs {
+    display: flex;
+    border-bottom: 2px solid #e0e0e0; /* Línea divisoria debajo de las pestañas */
+    margin-bottom: 1.8rem;
+}
+
+/* Estilo base de cada botón de pestaña */
+.auth-tab {
+    flex: 1;                   /* Ocupa la mitad del ancho cada una */
+    padding: 0.7rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #7f8c8d;
+    border-bottom: 2px solid transparent; /* Borde invisible por defecto */
+    margin-bottom: -2px;       /* Cubre el borde del contenedor cuando está activa */
+    transition: color 0.3s, border-color 0.3s;
+}
+
+/* Pestaña activa: texto azul y línea inferior resaltada */
+.auth-tab--active {
+    color: #3498db;
+    border-bottom-color: #3498db;
+    font-weight: 600;
+}
+
+/* Hover de una pestaña no activa */
+.auth-tab:not(.auth-tab--active):hover {
+    color: #2c3e50;
+}
+
+/* ---- Formularios ---- */
+
+/* Clase para ocultar un formulario (usada por el JS para alternar) */
+.auth-form--hidden {
+    display: none;
+}
+
+/* Espaciado entre grupos de campo (label + input) */
+.auth-form__group {
+    margin-bottom: 1.2rem;
+}
+
+/* Etiqueta del campo */
+.auth-form__label {
+    display: block;
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+}
+
+/* Campo de texto / email / password */
+.auth-form__input {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    color: #333;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+}
+
+/* Resalta el borde cuando el campo tiene foco */
+.auth-form__input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15); /* Halo azul sutil */
+}
+
+/* Botón de envío del formulario */
+.auth-form__btn {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hover del botón de envío */
+.auth-form__btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+}
+
+/* Responsividad del auth-box en pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .auth-box {
+        padding: 1.5rem 1rem;
+    }
+}
