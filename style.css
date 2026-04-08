@@ -34,9 +34,10 @@ body {
 /* ================================================ */
 
 .header {
-    background-color: #786e59;
-    color: white;
+    background-color: #fcf9f5; /* Light aesthetic background */
+    color: #333;
     padding: 0 1.5rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Soft shadow for separation */
 }
 
 .navbar {
@@ -49,7 +50,7 @@ body {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #fff;
+    color: #333;
     text-decoration: none;
 }
 
@@ -60,13 +61,14 @@ body {
 }
 
 .nav-link {
-    color: #fff;
+    color: #444;
     text-decoration: none;
+    font-weight: 500;
     transition: 0.3s;
 }
 
 .nav-link:hover {
-    color: #3498db;
+    color: #a67c52; /* Elegant copper/brown accent */
 }
 
 /* Menú Hamburguesa (oculto por defecto en escritorio) */
@@ -80,7 +82,7 @@ body {
     width: 25px;
     height: 3px;
     margin: 5px auto;
-    background-color: white;
+    background-color: #333;
     transition: 0.3s;
 }
 
@@ -95,7 +97,7 @@ body {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background-color: #2c3e50;
+        background-color:  #fcf9f5;
         width: 100%;
         text-align: center;
         transition: 0.3s;
@@ -125,7 +127,7 @@ body {
 
 /* Caja que contiene las pestañas y los formularios */
 .auth-forms {
-    background-color: #6b6451d3;
+    background-color: #786e59;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     width: 100%;
@@ -136,7 +138,7 @@ body {
 /* Estilos de las pestañas (tabs) */
 .auth-tabs {
     display: flex;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ffffff;
 }
 
 .auth-tab {
@@ -147,7 +149,7 @@ body {
     cursor: pointer;
     font-size: 1rem;
     font-weight: 600;
-    color: #7f8c8d;
+    color: #c00433;
     transition: all 0.3s;
     border-bottom: 3px solid transparent;
 }
@@ -175,7 +177,7 @@ body {
 .auth-form h2 {
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
-    color: #2c3e50;
+    color: #fcfeff;
     text-align: center;
 }
 
@@ -185,7 +187,7 @@ body {
 }
 
 .form-group label {
-    display: block;
+    display: none;
     margin-bottom: 0.5rem;
     font-weight: 600;
     color: #364c62;
@@ -198,7 +200,7 @@ body {
     border: 1px solid #70808b;
     border-radius: 4px;
     font-size: 1rem;
-    transition: border-color 0.3s;
+    transition: border 0.3s;
 }
 
 .form-group input:focus {
@@ -212,12 +214,12 @@ body {
     width: 100%;
     padding: 0.75rem;
     background-color: #3498db;
-    color: white;
+    color: rgb(231, 14, 14);
     border: none;
     border-radius: 4px;
     font-size: 1rem;
     font-weight: 600;
-    cursor: pointer;
+    cursor: help;
     transition: background-color 0.3s;
     margin-top: 0.5rem;
 }
@@ -246,9 +248,10 @@ body {
 /* ================================================ */
 
 .footer {
-    background-color: #786e59;
-    color: #bdc3c7;
+    background-color: #fcf9f5;
+    color: #666;
     margin-top: auto; /* Empuja el footer al fondo cuando hay poco contenido */
+    border-top: 1px solid #e8e0d5; /* Soft border */
 }
 
 .footer-container {
@@ -265,7 +268,7 @@ body {
 .footer-logo {
     font-size: 1.4rem;
     font-weight: bold;
-    color: #fff;
+    color: #333;
 }
 
 .footer-desc {
@@ -276,11 +279,12 @@ body {
 }
 
 .footer-title {
-    color: #fff;
+    color: #333;
     font-size: 1rem;
     margin-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    font-weight: 600;
 }
 
 .footer-links ul {
@@ -291,14 +295,14 @@ body {
 }
 
 .footer-links a {
-    color: #bdc3c7;
+    color: #666;
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.3s;
 }
 
 .footer-links a:hover {
-    color: #3498db;
+    color: #a67c52;
 }
 
 .footer-contact p {
@@ -307,11 +311,11 @@ body {
 }
 
 .footer-bottom {
-    border-top: 1px solid #2c3e50;
+    border-top: 1px solid #e8e0d5;
     text-align: center;
     padding: 1rem 1.5rem;
     font-size: 0.8rem;
-    color: #7f8c8d;
+    color: #888;
 }
 
 /* Responsividad del footer en móvil */
@@ -736,4 +740,21 @@ body {
     .auth-box {
         padding: 1.5rem 1rem;
     }
+}
+
+/* ================================================ */
+/* NUEVO: Estilos para Imágenes de Logos            */
+/* ================================================ */
+.logo-img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.footer-logo-img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    display: block;
 }

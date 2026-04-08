@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú Moderno Responsivo</title>
-    <link rel="shortcut icon" href="assets/img/Favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/img/Logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="header">
         <nav class="navbar">
-            <a href="index.html" class="logo">Mi Logo</a>
+            <a href="index.html" class="logo"><img src="assets/img/Logos_3.png" alt="Elite Logo" class="logo-img"></a>
 
             <ul class="nav-menu">
                 <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
@@ -30,14 +30,37 @@
 
     </header>
     
-    <h1>ESTA ES LA PÁGINA DE SERVICIOS</h1>
-    
+    <main class="main-content">
+        <section class="servicios-section">
+            <h1 class="section-title">Nuestros Servicios en Elite</h1>
+            <p class="section-subtitle">Descubre los tratamientos que ofrecemos para destacar tu belleza natural</p>
+            
+            <div class="cards-container">
+                <!-- Tarjeta 1: Limpieza Facial -->
+                <article class="card">
+                    <div class="card__icon">💆‍♀️</div>
+                    <h2 class="card__title">Limpieza Facial</h2>
+                    <p class="card__desc">Renueva tu piel con nuestro tratamiento profundo de limpieza facial. Eliminamos impurezas, extraemos comedones y restauramos el brillo natural de tu rostro con productos hidratantes de alta cosmética.</p>
+                    <a href="#" class="card__btn">Reservar Cita</a>
+                </article>
+
+                <!-- Tarjeta 2: Tratamientos Capilares -->
+                <article class="card">
+                    <div class="card__icon">✨</div>
+                    <h2 class="card__title">Tratamientos Capilares</h2>
+                    <p class="card__desc">Devuélvele la vida y la fuerza a tu cabello. Ofrecemos tratamientos especializados para hidratar, reparar, controlar la caída y nutrir profundamente la fibra capilar desde la raíz.</p>
+                    <a href="#" class="card__btn">Reservar Cita</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
     <footer class="footer">
         <div class="footer-container">
 
 
             <div class="footer-brand">
-                <span class="footer-logo">Milogo</span>
+                <span class="footer-logo"><img src="assets/img/Logo.png" alt="Elite Logo" class="footer-logo-img"></span>
                 <p class="footer-desc">Creando experiencias digitales unicas y modernas.</p>
 
             </div>
@@ -49,6 +72,7 @@
                     <li><a href="Servicios.html">Servicios</a></li>
                     <li><a href="Portafolio.html">Portafolio</a></li>
                     <li><a href="Contacto.html">Contacto</a></li>
+                    <li><a href="login.html">Ingreso</a></li>
 
                 </ul>
             </div>
