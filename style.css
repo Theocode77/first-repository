@@ -72,7 +72,7 @@ body {
 }
 
 /* Menú Hamburguesa (oculto por defecto en escritorio) */
-.hamburger {
+.hamburguer {
     display: none;
     cursor: pointer;
 }
@@ -88,7 +88,7 @@ body {
 
 /* Responsividad: Pantallas móviles */
 @media (max-width: 768px) {
-    .hamburger {
+    .hamburguer {
         display: block;
     }
 
@@ -117,67 +117,69 @@ body {
 /* Contenedor principal para centrar los formularios */
 
 .auth-container {
-    flex: 1 0 auto; /* Hace que este contenedor crezca para ocupar el espacio disponible y empujar el footer hacia abajo */
+    flex: 1 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 2rem 1.5rem;
-    background-color: #ecf0f1; /* Un fondo gris muy suave para diferenciar la sección */
+    background-color: #fcf9f5;
 }
 
 /* Caja que contiene las pestañas y los formularios */
 .auth-forms {
-    background-color: #786e59;
+    background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e0e0;
     width: 100%;
     max-width: 450px;
-    overflow: hidden; /* Para que el borde redondeado afecte a las pestañas */
+    overflow: hidden;
 }
 
 /* Estilos de las pestañas (tabs) */
 .auth-tabs {
     display: flex;
-    border-bottom: 1px solid #ffffff;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .auth-tab {
     flex: 1;
     padding: 1rem;
-    background: none;
+    background: #f8f9fa;
     border: none;
     cursor: pointer;
     font-size: 1rem;
     font-weight: 600;
-    color: #c00433;
+    color: #7f8c8d;
     transition: all 0.3s;
     border-bottom: 3px solid transparent;
 }
 
 .auth-tab:hover {
-    color: #2c3e50;
-    background-color: #f8f9fa;
+    color: #a67c52;
+    background-color: #fff;
 }
 
 .auth-tab.active {
-    color: #2c3e50;
-    border-bottom-color: #3498db; /* Línea azul para la pestaña activa */
+    color: #a67c52;
+    background-color: #fff;
+    border-bottom-color: #a67c52;
 }
 
 /* Estilos de los formularios */
 .auth-form {
-    display: none; /* Oculto por defecto */
-    padding: 2rem;
+    display: none;
+    padding: 2.5rem 2rem;
 }
 
 .auth-form.active {
-    display: block; /* Mostrar cuando está activo */
+    display: block;
 }
 
 .auth-form h2 {
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
-    color: #fcfeff;
+    color: #2c3e50;
     text-align: center;
 }
 
@@ -187,45 +189,47 @@ body {
 }
 
 .form-group label {
-    display: none;
+    display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
-    color: #364c62;
+    color: #555;
     font-size: 0.9rem;
 }
 
 .form-group input {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid #70808b;
+    border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
+    color: #333;
     transition: border 0.3s;
 }
 
 .form-group input:focus {
     outline: none;
-    border-color: #3498db;
-    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+    border-color: #a67c52;
+    box-shadow: 0 0 0 2px rgba(166, 124, 82, 0.2);
 }
 
 /* Botón de envío */
 .auth-submit {
     width: 100%;
-    padding: 0.75rem;
-    background-color: #3498db;
-    color: rgb(231, 14, 14);
+    padding: 0.8rem;
+    background-color: #a67c52;
+    color: #fff;
     border: none;
     border-radius: 4px;
     font-size: 1rem;
     font-weight: 600;
-    cursor: help;
-    transition: background-color 0.3s;
-    margin-top: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 1rem;
 }
 
 .auth-submit:hover {
-    background-color: #2980b9;
+    background-color: #8a6440;
+    transform: translateY(-2px);
 }
 
 /* Mensajes de éxito/error */
@@ -240,6 +244,84 @@ body {
 @media (max-width: 480px) {
     .auth-form {
         padding: 1.5rem;
+    }
+}
+
+/* ================================================ */
+/* Estilos del Hero Image (Portafolio)              */
+/* ================================================ */
+
+.hero-image {
+    position: relative;
+    height: 100vh; /* 80% de la altura de la pantalla */
+    background-image: url('assets/img/Logo.png'); /* Reemplaza con tu imagen de portafolio */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-top: 70px; /* Espacio para el header fijo */
+}
+
+.hero-image__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Capa semitransparente oscura */
+}
+
+.hero-image__content {
+    position: relative;
+    z-index: 2;
+    padding: 0 1.5rem;
+}
+
+.hero-image__title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-image__subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-image__btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: #a67c52; /* Color cobre/marrón elegante */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.hero-image__btn:hover {
+    background-color: #8a6440;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .hero-image {
+        height: 60vh;
+    }
+
+    .hero-image__title {
+        font-size: 2rem;
+    }
+
+    .hero-image__subtitle {
+        font-size: 1.2rem;
     }
 }
 
@@ -484,10 +566,13 @@ body {
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
-/* Ícono grande dentro de la card */
-.card__icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+/* Imagen dentro de la card */
+.card__img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
 }
 
 /* Título de la card */
