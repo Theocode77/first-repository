@@ -17,7 +17,8 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ocupa al menos toda la pantalla */
+    min-height: 100vh;
+    /* Ocupa al menos toda la pantalla */
 }
 
 /* ========================== */
@@ -25,7 +26,8 @@ body {
    entre el header y el footer (necesario para el layout sticky-footer) */
 /* ========================== */
 .main-content {
-    flex: 1; /* Empuja el footer al fondo siempre */
+    flex: 1;
+    /* Empuja el footer al fondo siempre */
 }
 
 
@@ -34,10 +36,12 @@ body {
 /* ================================================ */
 
 .header {
-    background-color: #fcf9f5; /* Light aesthetic background */
+    background-color: #fcf9f5;
+    /* Light aesthetic background */
     color: #333;
     padding: 0 1.5rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Soft shadow for separation */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    /* Soft shadow for separation */
 }
 
 .navbar {
@@ -68,7 +72,8 @@ body {
 }
 
 .nav-link:hover {
-    color: #a67c52; /* Elegant copper/brown accent */
+    color: #a67c52;
+    /* Elegant copper/brown accent */
 }
 
 /* Menú Hamburguesa (oculto por defecto en escritorio) */
@@ -97,7 +102,7 @@ body {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background-color:  #fcf9f5;
+        background-color: #fcf9f5;
         width: 100%;
         text-align: center;
         transition: 0.3s;
@@ -237,7 +242,8 @@ body {
     margin-top: 1rem;
     text-align: center;
     font-size: 0.9rem;
-    min-height: 1.5rem; /* Evita que el layout salte cuando aparece un mensaje */
+    min-height: 1.5rem;
+    /* Evita que el layout salte cuando aparece un mensaje */
 }
 
 /* Pequeño ajuste para pantallas muy pequeñas */
@@ -253,8 +259,10 @@ body {
 
 .hero-image {
     position: relative;
-    height: 100vh; /* 80% de la altura de la pantalla */
-    background-image: url('assets/img/Logo.png'); /* Reemplaza con tu imagen de portafolio */
+    height: 100vh;
+    /* 80% de la altura de la pantalla */
+    background-image: url('assets/img/Logo.png');
+    /* Reemplaza con tu imagen de portafolio */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -262,7 +270,8 @@ body {
     justify-content: center;
     text-align: center;
     color: white;
-    margin-top: 70px; /* Espacio para el header fijo */
+    margin-top: 70px;
+    /* Espacio para el header fijo */
 }
 
 .hero-image__overlay {
@@ -271,7 +280,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Capa semitransparente oscura */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Capa semitransparente oscura */
 }
 
 .hero-image__content {
@@ -297,7 +307,8 @@ body {
 .hero-image__btn {
     display: inline-block;
     padding: 0.8rem 2rem;
-    background-color: #a67c52; /* Color cobre/marrón elegante */
+    background-color: #a67c52;
+    /* Color cobre/marrón elegante */
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -332,8 +343,10 @@ body {
 .footer {
     background-color: #fcf9f5;
     color: #666;
-    margin-top: auto; /* Empuja el footer al fondo cuando hay poco contenido */
-    border-top: 1px solid #e8e0d5; /* Soft border */
+    margin-top: auto;
+    /* Empuja el footer al fondo cuando hay poco contenido */
+    border-top: 1px solid #e8e0d5;
+    /* Soft border */
 }
 
 .footer-container {
@@ -442,10 +455,13 @@ body {
 
 /* Sección hero que ocupa toda la pantalla */
 .hero-video {
-    position: relative;       /* Necesario para posicionar el overlay y el contenido encima del video */
+    position: relative;
+    /* Necesario para posicionar el overlay y el contenido encima del video */
     width: 100%;
-    height: calc(100vh - 70px); /* Resta la altura del navbar para que no se solape */
-    overflow: hidden;           /* Recorta el video si sobresale del contenedor */
+    height: calc(100vh - 70px);
+    /* Resta la altura del navbar para que no se solape */
+    overflow: hidden;
+    /* Recorta el video si sobresale del contenedor */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -453,13 +469,16 @@ body {
 
 /* Video de fondo: cubre todo el contenedor */
 .hero-video__bg {
-    position: absolute;   /* Se posiciona respecto al .hero-video */
+    position: absolute;
+    /* Se posiciona respecto al .hero-video */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;    /* Cubre el área sin deformar el video */
-    z-index: 0;           /* Queda detrás del overlay y del contenido */
+    object-fit: cover;
+    /* Cubre el área sin deformar el video */
+    z-index: 0;
+    /* Queda detrás del overlay y del contenido */
 }
 
 /* Capa semi-transparente sobre el video para oscurecerlo
@@ -470,14 +489,17 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* 50% de opacidad negra */
-    z-index: 1;                            /* Encima del video, debajo del contenido */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 50% de opacidad negra */
+    z-index: 1;
+    /* Encima del video, debajo del contenido */
 }
 
 /* Contenido de texto centrado sobre el video */
 .hero-video__content {
     position: relative;
-    z-index: 2;           /* Encima del overlay y del video */
+    z-index: 2;
+    /* Encima del overlay y del video */
     text-align: center;
     color: #fff;
     padding: 0 1.5rem;
@@ -488,7 +510,8 @@ body {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); /* Sombra para mayor legibilidad */
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    /* Sombra para mayor legibilidad */
 }
 
 /* Subtítulo del hero */
@@ -502,7 +525,8 @@ body {
 .hero-video__btn {
     display: inline-block;
     padding: 0.8rem 2rem;
-    background-color: #3498db;     /* Azul de marca, igual que el hover del navbar */
+    background-color: #3498db;
+    /* Azul de marca, igual que el hover del navbar */
     color: #fff;
     text-decoration: none;
     border-radius: 4px;
@@ -513,8 +537,10 @@ body {
 
 /* Efecto hover del botón CTA */
 .hero-video__btn:hover {
-    background-color: #2980b9;   /* Azul más oscuro al pasar el cursor */
-    transform: translateY(-2px); /* Sube ligeramente el botón */
+    background-color: #2980b9;
+    /* Azul más oscuro al pasar el cursor */
+    transform: translateY(-2px);
+    /* Sube ligeramente el botón */
 }
 
 /* Responsividad del hero en móvil */
@@ -522,6 +548,7 @@ body {
     .hero-video__title {
         font-size: 2rem;
     }
+
     .hero-video__subtitle {
         font-size: 1rem;
     }
@@ -543,7 +570,8 @@ body {
 .cards-container {
     display: flex;
     gap: 2rem;
-    flex-wrap: wrap;         /* Se adapta a pantallas pequeñas apilando las cards */
+    flex-wrap: wrap;
+    /* Se adapta a pantallas pequeñas apilando las cards */
     justify-content: center;
 }
 
@@ -556,8 +584,10 @@ body {
     max-width: 320px;
     width: 100%;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* Sombra suave para profundidad */
-    transition: transform 0.3s, box-shadow 0.3s; /* Animación al hacer hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    /* Sombra suave para profundidad */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Animación al hacer hover */
 }
 
 /* Efecto hover de la card: sube y aumenta la sombra */
@@ -630,7 +660,8 @@ body {
 /* Grid del portafolio: muestra los items en columnas */
 .portafolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsivo automático */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* Responsivo automático */
     gap: 1.5rem;
     justify-items: center;
 }
@@ -638,7 +669,8 @@ body {
 /* Cada item del portafolio: usa position relative para el overlay de hover */
 .portafolio-item {
     position: relative;
-    overflow: hidden;           /* Recorta la imagen y el overlay al borde redondeado */
+    overflow: hidden;
+    /* Recorta la imagen y el overlay al borde redondeado */
     border-radius: 8px;
     width: 100%;
     max-width: 700px;
@@ -651,8 +683,10 @@ body {
     display: block;
     width: 100%;
     height: 280px;
-    object-fit: cover;          /* Recorta la imagen para que llene el espacio */
-    transition: transform 0.4s; /* Efecto zoom suave */
+    object-fit: cover;
+    /* Recorta la imagen para que llene el espacio */
+    transition: transform 0.4s;
+    /* Efecto zoom suave */
 }
 
 /* Zoom de la imagen al hacer hover sobre el item */
@@ -667,10 +701,13 @@ body {
     left: 0;
     width: 100%;
     padding: 1.2rem;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75)); /* Degradado de abajo a arriba */
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+    /* Degradado de abajo a arriba */
     color: #fff;
-    opacity: 0;                 /* Oculto por defecto */
-    transition: opacity 0.4s;  /* Aparece suavemente */
+    opacity: 0;
+    /* Oculto por defecto */
+    transition: opacity 0.4s;
+    /* Aparece suavemente */
 }
 
 /* Muestra el overlay al hacer hover */
@@ -704,7 +741,8 @@ body {
     align-items: center;
     padding: 4rem 1.5rem;
     min-height: 100%;
-    background-color: #f4f6f8; /* Fondo gris claro para diferenciar */
+    background-color: #f4f6f8;
+    /* Fondo gris claro para diferenciar */
 }
 
 /* Caja blanca que contiene las pestañas y los formularios */
@@ -714,7 +752,8 @@ body {
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
     padding: 2.5rem 2rem;
     width: 100%;
-    max-width: 420px; /* Ancho máximo razonable para un formulario */
+    max-width: 420px;
+    /* Ancho máximo razonable para un formulario */
 }
 
 /* Título interior del auth-box */
@@ -730,21 +769,25 @@ body {
 /* Contenedor de los dos botones de pestaña */
 .auth-tabs {
     display: flex;
-    border-bottom: 2px solid #e0e0e0; /* Línea divisoria debajo de las pestañas */
+    border-bottom: 2px solid #e0e0e0;
+    /* Línea divisoria debajo de las pestañas */
     margin-bottom: 1.8rem;
 }
 
 /* Estilo base de cada botón de pestaña */
 .auth-tab {
-    flex: 1;                   /* Ocupa la mitad del ancho cada una */
+    flex: 1;
+    /* Ocupa la mitad del ancho cada una */
     padding: 0.7rem;
     background: none;
     border: none;
     cursor: pointer;
     font-size: 0.95rem;
     color: #7f8c8d;
-    border-bottom: 2px solid transparent; /* Borde invisible por defecto */
-    margin-bottom: -2px;       /* Cubre el borde del contenedor cuando está activa */
+    border-bottom: 2px solid transparent;
+    /* Borde invisible por defecto */
+    margin-bottom: -2px;
+    /* Cubre el borde del contenedor cuando está activa */
     transition: color 0.3s, border-color 0.3s;
 }
 
@@ -796,7 +839,8 @@ body {
 /* Resalta el borde cuando el campo tiene foco */
 .auth-form__input:focus {
     border-color: #3498db;
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15); /* Halo azul sutil */
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+    /* Halo azul sutil */
 }
 
 /* Botón de envío del formulario */
